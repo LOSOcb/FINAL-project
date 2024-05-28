@@ -13,5 +13,5 @@ const app  = express()
 app.use(bodyParser.json(), express.static(path.join(__dirname, "public"))), usersRouter, gamesRouter, categoriesRouter
 
 app.listen(PORT, () => {
-    console.log('Server is running at PORT http://localhost:${PORT}')
+    console.log(`Server is running at PORT http://localhost:${PORT}`)
 })
