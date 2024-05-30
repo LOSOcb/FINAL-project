@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const usersModel = require('./users');
-const categoryModel = require('./categories');
+const userModel = require('./user');
+const categoryModel = require('./category');
 
 const gameSchema = new mongoose.Schema({
   title: {
@@ -25,7 +25,7 @@ const gameSchema = new mongoose.Schema({
   },
   users: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: usersModel,
+    ref: userModel,
   }],
   categories: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -48,6 +48,6 @@ gameSchema.statics.findGameByCategory = function(category) {
   });
 }; 
 
-const gamesModel = mongoose.model('Game', gameSchema);
+const gameModel = mongoose.model('Game', gameSchema);
 
-module.exports = gamesModel;
+module.exports = gameModel;

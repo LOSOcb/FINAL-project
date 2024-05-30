@@ -1,38 +1,31 @@
-const sendAllUsers = async (req, res) => {
-    res.setHeader('Content-Type', 'application/json')
-    res.end(JSON.stringify(req.user))
+const sendAllUsers = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(req.usersArray));
+};
+
+const sendUserCreated = (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(req.user));
 }
 
-const sendUserById = async (req, res) => {
-    res.setHeader('Content-Type', 'application/json')
-    res.end(JSON.stringify(req.user))
+const sendUserById = (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(req.user));
 }
 
-const sendUserCreated = async (req, res) => {
-    res.setHeader('Content-Type', 'application/json')
-    res.end(JSON.stringify(req.user))
-}
+const sendUserUpdated = (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).send(JSON.stringify({ message: "Пользователь обновлен" }));
+};
 
-const sendUserUpdated = async (req, res) => {
-    res.setHeader('Content-Type', 'application/json')
-    res.end("User updated")
-}
-
-const sendUsersDeleted = async (req, res) => {
-    res.setHeader('Content-Type', 'application/json')
-    res.end(JSON.stringify(req.user))
-}
+const sendUserDeleted = (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(req.user));
+};
 
 const sendMe = (req, res) => {
-    res.setHeader("Content-Type", "application/json")
-    req.end(JSON.stringify(req.user))
-}
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(req.user));
+};
 
-module.exports = {
-sendAllUsers,
-sendUserById,
-sendUserCreated,
-sendUserUpdated,
-sendUsersDeleted,
-sendMe
-}
+module.exports = { sendAllUsers, sendUserCreated, sendUserById, sendUserUpdated, sendUserDeleted, sendMe };
