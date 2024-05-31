@@ -1,9 +1,9 @@
 const allowedCors = [
-    'https://finalfronts.nomorepartiesco.ru/',
-    'https://finalbeck.nomorepartiesco.ru/',
-    'http://localhost:3000/',
-];
-
+    'https://finalfronts.nomorepartiesco.ru',
+    'https://finalbeck.nomorepartiesco.ru',
+    'http://localhost:3000',
+    'http://localhost:3001'
+]; 
 function cors(req, res, next) {
     const { origin } = req.headers;
     if (allowedCors.includes(origin)) {
